@@ -2,6 +2,8 @@
 
 [tutorials]()
 
+Api: 661b00acd264609f1453387bd2a422fd
+
 
 
 
@@ -115,6 +117,26 @@ body {
   justify-content: space-between;
   padding: 0 20px;
   margin-top: 50px; 
+}
+
+.col{
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.col img{
+  width: 40px;
+  margin-right: 10px;
+}
+```
+
+
+
+```css
+.humidity, .wind{
+  font-size: 28px;
+  margin-top: -6px;
 }
 ```
 
