@@ -82,3 +82,39 @@ body {
 }
 ```
 
+
+
+## weather css
+
+```css
+.weather-icon{
+  width: 170px;
+  margin-top: 30px;
+}
+
+.weather h1{
+  font-size: 80px;
+  font-weight: 500;
+}
+
+.weather h1{
+  font-size: 45px;
+  font-weight: 400;
+  margin-top: -10px;
+}
+```
+
+##  
+
+## details css
+
+```css
+.details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 50px; 
+}
+```
+
