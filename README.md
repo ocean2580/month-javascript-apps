@@ -104,6 +104,11 @@ body {
   font-weight: 400;
   margin-top: -10px;
 }
+
+.weather {
+  /*change when city name is entered*/
+  display: none;
+}
 ```
 
 ##  
@@ -137,6 +142,20 @@ body {
 .humidity, .wind{
   font-size: 28px;
   margin-top: -6px;
+}
+```
+
+
+
+## error css
+
+```js
+.error {
+  text-align: leeft;
+  margin-left: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+  display: none;
 }
 ```
 
