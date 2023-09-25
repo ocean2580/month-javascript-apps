@@ -130,3 +130,11 @@ ul li span:hover{
 ```
 
 > In CSS, **`::before`** creates a [pseudo-element](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements) that is the first child of the selected element. It is often used to add cosmetic content to an element with the [`content`](https://developer.mozilla.org/en-US/docs/Web/CSS/content) property. It is inline by default.
+
+
+
+innerHTML vs innerText vs textContent
+
+- **InnerHTML:** Using innerHTML allows you to see exactly what’s in the HTML markup contained within a string, including elements like spacing, line breaks and formatting. 
+- **InnerText:** This approximates the “rendered” text content of a node and is aware of styling and CSS. It’s most effective when you only need to see what’s in the element without the formatting.
+- **TextContent:** This retrieves and sets the content of the tag as plain text. It’s most effective when you want to see what’s in an element, plus **styling**.

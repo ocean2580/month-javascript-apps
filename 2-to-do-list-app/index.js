@@ -16,17 +16,29 @@ function addTask() {
   }
   // clear the input box
   inputBox.value = '';
+  saveData();
 }
 
 listContainer.addEventListener('click',(e)=>{
   if (e.target.tagName === 'LI') {
     // click the li, it will switch between checked and unchecked
     // exist -> remove, inexist -> add
-    e.target.classList.toggle('checked')
+    e.target.classList.toggle('checked');
+    saveData();
   } else if (e.target.tagName === 'SPAN') {
     // click the cross, li and span will be removed
     e.target.parentElement.remove();
+    saveData();
   }
 }, false);
 
+function saveData() {
+  localStorage.setItem('data', listContainer.innerHTML);
+}
 
+function showTask() {
+  listContainer.innerHTML = localStorage.getItem('data');
+}
+
+// keep data after refreshing
+showTask();
