@@ -1,11 +1,11 @@
 # 2. To-Do List App
-
+[tutorial](https://youtu.be/G0jO8kUrg-I?si=FXBk6IzHVeTPFaDI)
 
 
 ## CSS
 
 
-
+### container
  ```css
  .container{
    width: 100%;
@@ -16,7 +16,7 @@
  ```
 
 
-
+### todo app
 ```css
 .todo-app{
   width: 100%;
@@ -26,11 +26,8 @@
   background: #fff;
   border-radius: 10px;
 }
-```
 
 
-
-```css
 .todo-app h2{
   color: #002765;
   display: flex;
@@ -45,7 +42,7 @@
 ```
 
 
-
+### input
 ```css
 .row{
   display: flex;
@@ -78,7 +75,7 @@ button{
 ```
 
 
-
+### ul
 ```css
 ul li{
   list-style: none;
@@ -133,8 +130,35 @@ ul li span:hover{
 
 
 
-innerHTML vs innerText vs textContent
+## HTML
 
-- **InnerHTML:** Using innerHTML allows you to see exactly what’s in the HTML markup contained within a string, including elements like spacing, line breaks and formatting. 
-- **InnerText:** This approximates the “rendered” text content of a node and is aware of styling and CSS. It’s most effective when you only need to see what’s in the element without the formatting.
+container
+  todo-app
+    row
+    list-container
+
+
+
+## JS
+create const variable` inputBox` and `listContainer`.
+
+`addTask()` :  create li and pass value then append as child, add a cross for each li, clear the input box, save data.
+
+`addEventListener('click',(e)=>{})` on listContainer : click the li, it will switch between checked and unchecked; click the cross, li and span will be removed. save data after the click.
+
+```JS
+// exist -> remove, inexist -> add
+e.target.classList.toggle('checked');
+```
+
+`saveData()` : put `listContainer.innerHTML` into `localStorage` to avoid losing data after refreshing.
+
+`showTask()` : show data from saved `listContainer.innerHTML`.
+
+
+
+<i>innerHTML vs innerText vs textContent</i>
+
+- **InnerHTML:** Using innerHTML allows you to see exactly what’s in the **HTML markup** contained within a string, including elements like spacing, line breaks and formatting. 
+- **InnerText:** This approximates the “rendered” text content of a node and is aware of styling and CSS. It’s most effective when you only need to see what’s in the element **without the formatting**.
 - **TextContent:** This retrieves and sets the content of the tag as plain text. It’s most effective when you want to see what’s in an element, plus **styling**.
