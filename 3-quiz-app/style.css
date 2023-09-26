@@ -48,10 +48,14 @@ body{
   border-radius: 4px;
   cursor: pointer;
 }
-
-.btn:hover{
+/* only work when button is not disabled */
+.btn:hover:not([disabled]){
   background: #222;
   color: #fff;
+}
+/* add no drop effect */
+.btn:disabled{
+  cursor: no-drop;
 }
 
 #next-btn{
@@ -64,4 +68,12 @@ body{
   margin: 20px auto 0;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.correct{
+  background: #9aeabc;
+}
+
+.incorrect{
+  background: #ff9393;
 }

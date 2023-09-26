@@ -1,3 +1,4 @@
+// set
 const questions = [
   {
     question: "1",
@@ -38,10 +39,12 @@ const questions = [
 
 ]
 
+// object
 const questionEl = document.getElementById('question');
-const answerButton = document.getElementById('answer-btns');
+const answerButtons = document.getElementById('answer-btns');
 const nextBtn = document.getElementById('next-btn');
 
+// counter
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -53,6 +56,8 @@ function startQuiz() {
 }
 
 function showQuestion() {
+  resetState();
+
   // show question 
   let currentQuestion = questions[currentQuestionIndex];
   let currentQuestionNo = currentQuestionIndex + 1;
@@ -63,9 +68,71 @@ function showQuestion() {
     const button = document.createElement('button');
     button.innerHTML = answer.text;
     button.classList.add("btn");
-    answerButton.appendChild(button);
-  })
+    answerButtons.appendChild(button);
+    // set correct value
+    if (answer.correct) {
+      button.dataset.correct = answer.correct;
+    }
+    // add click event
+    button.addEventListener('click', selectAnswer);
+  });
 }
+
+function resetState() {
+  // don't show next button
+  nextBtn.style.display = 'none';
+
+  // clear existing buttons 
+  while (answerButtons.firstChild) {
+    answerButtons.removeChild(answerButtons.firstChild);
+  }
+}
+
+// answer is correct or not
+function selectAnswer(e) {
+  // get the selected button
+  const selectedBtn = e.target;
+  const isCorrect = selectedBtn.dataset.correct === 'true';
+  if (isCorrect) {
+    selectedBtn.classList.add('correct');
+    score++;
+  } else {
+    selectedBtn.classList.add('incorrect');
+  }
+  Array.from(answerButtons.children).forEach(button=>{
+    if (button.dataset.correct === 'true') {
+      button.classList.add('correct');
+    }
+    // no more clicks
+    button.disabled = true;
+  });
+  // show next button
+  nextBtn.style.display = 'block';
+}
+
+function handleNextButton(){
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    showScore();
+  }
+}
+
+function showScore() {
+  resetState();
+  questionEl.innerHTML = `<i>You scored ${score} out of ${questions.length}!</i>`;
+  nextBtn.innerHTML = "Play Again";
+  nextBtn.style.display = 'block';
+}
+
+nextBtn.addEventListener('click',()=>{
+  if (currentQuestionIndex < questions.length) {
+    handleNextButton();
+  } else {
+    startQuiz();
+  }
+});
 
 startQuiz();
 
