@@ -99,6 +99,7 @@ function selectAnswer(e) {
   } else {
     selectedBtn.classList.add('incorrect');
   }
+  // show true answer from all buttons
   Array.from(answerButtons.children).forEach(button=>{
     if (button.dataset.correct === 'true') {
       button.classList.add('correct');

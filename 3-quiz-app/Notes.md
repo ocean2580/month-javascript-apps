@@ -1,6 +1,6 @@
 # Quiz App
 
-
+[tutorials](https://youtu.be/PBcqGxrr9g8?si=q-ro2EyFtpMCmyR1)
 
 ## CSS
 
@@ -72,6 +72,45 @@
 }
 ```
 
+ ```css
+ .correct{
+   background: #9aeabc;
+ }
+ 
+ .incorrect{
+   background: #ff9393;
+ }
+ ```
+
+## HTML
+app
+  quiz
+    question
+    answer-btns
+    next-btn
+
+## JS
+
+`startQuiz()` : init counters and the value of `nextBtn` .
+
+`showQuestion()` : `resetState()` at first, show question, create button for each answer.
+
+`resetState()` : don't show next button, clear existing buttons.
+
+`selectAnswer(e)` : this is a function for click event. get the selected button, show true answer from all buttons, show next button.
+
+`handleNextButton()` : continue or `showScore()`.
 
 
-What's  `classList` usage?
+
+<i>What's `dataset` usage?</i>
+
+[article](https://medium.com/@adamkearney124/using-dataset-in-javascript-5331af3ec6c3)
+
+In brief, it's uesd for different  functions to access certain data that storing inside elements on the DOM itself.
+
+
+
+*What's  `classList` usage?*
+
+The `classList` property returns the CSS classnames of an element.
